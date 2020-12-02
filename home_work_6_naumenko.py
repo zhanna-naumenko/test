@@ -50,8 +50,14 @@ for value in my_string:
 print(new_string)
 
 ##########################################################################
-#№6Даны две строки. Создать список в который поместить те символы,
-#которые есть в обеих строках хотя бы раз.
+#№6
+my_str_1 = "Hello, World"
+my_str_2 = "Hello, Frodo"
+result = []
+for value in my_str_1 and my_str_2:
+    if my_str_1.find(value) - my_str_1.rfind(value) == my_str_2.find(value) - my_str_2.rfind(value):
+        result.append(value)
+print(result)
 
 
 ###########################################################################
@@ -59,9 +65,7 @@ print(new_string)
 my_str_1 = "Hello, World"
 my_str_2 = "Hello, Frodo"
 result = []
-for value in my_str_1:
-    new_str = my_str_1.find(value) - my_str_1.rfind(value)
-    if new_str == 0:
-        if value in my_str_2 and my_str_2.find(value) - my_str_2.rfind(value) == 0:
-            result.append(value)
+for value in my_str_1 and my_str_2:
+    if value in my_str_1 and my_str_2 and my_str_1.find(value) - my_str_1.rfind(value) == my_str_2.find(value) - my_str_2.rfind(value):
+        result.append(value)
 print(result)
