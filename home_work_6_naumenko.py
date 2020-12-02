@@ -32,19 +32,22 @@ print(new_list)
 
 ########################################################################
 #№4
-#исправить
-my_list = ["120", "55", "nice", "dice", "apple"]
+my_list = [120, 55, "55", "nice", "dice", "apple", 33]
 new_list = []
 
 for value in my_list:
-    if value.isalpha():
+    if type(value) == str:
         new_list.append(value)
 print(new_list)
 
 #########################################################################
-#№5Дана строка my_str. Создать список в который поместить те символы из my_str,
-#которые встречаются в строке только один раз.
-
+#№5
+my_string = "asdfghasd"
+new_string = []
+for value in my_string:
+    if my_string.find(value) - my_string.rfind(value) == 0:
+        new_string.append(value)
+print(new_string)
 
 ##########################################################################
 #№6Даны две строки. Создать список в который поместить те символы,
@@ -52,15 +55,13 @@ print(new_list)
 
 
 ###########################################################################
-#№7 Даны две строки. Создать список в который поместить те символы, которые есть в обеих строках,
-#но в каждой только по одному разу.
-
-str1_ = "Гарри Поттер и Филосовский камень"
-str2_ = "Гарри Поттер и Тайная комната"
-res = []
-for value in str1_:
-    k = str1_.find(value) - str1_.rfind(value)
-    if k == 0:
-        if value in str2_ and str2_.find(value) - str2_.rfind(value) == 0:
-            res.append(value)
-print(res)
+#№7
+my_str_1 = "Hello, World"
+my_str_2 = "Hello, Frodo"
+result = []
+for value in my_str_1:
+    new_str = my_str_1.find(value) - my_str_1.rfind(value)
+    if new_str == 0:
+        if value in my_str_2 and my_str_2.find(value) - my_str_2.rfind(value) == 0:
+            result.append(value)
+print(result)
