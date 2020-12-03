@@ -51,21 +51,24 @@ print(new_string)
 
 ##########################################################################
 #№6
-my_str_1 = "Hello, World"
-my_str_2 = "Hello, Frodo"
-result = []
-for value in my_str_1 and my_str_2:
-    if my_str_1.find(value) - my_str_1.rfind(value) == my_str_2.find(value) - my_str_2.rfind(value):
-        result.append(value)
-print(result)
+my_str_1 = "hello, world"
+my_str_2 = "hello, work"
+exists = []
+for symbol in my_str_1:
+    if symbol not in exists:
+        if symbol in my_str_2 not in exists:
+            exists.append(symbol)
+print(exists)
 
 
 ###########################################################################
 #№7
-my_str_1 = "Hello, World"
-my_str_2 = "Hello, Frodo"
+my_str_1 = "hello, world"
+my_str_2 = "hello, work"
 result = []
-for value in my_str_1 and my_str_2:
-    if value in my_str_1 and my_str_2 and my_str_1.find(value) - my_str_1.rfind(value) == my_str_2.find(value) - my_str_2.rfind(value):
-        result.append(value)
+for value in my_str_1:
+    new_value = my_str_1.find(value) - my_str_1.rfind(value)
+    if new_value == 0:
+        if value in my_str_2 and my_str_2.find(value) - my_str_2.rfind(value) == 0:
+            result.append(value)
 print(result)
