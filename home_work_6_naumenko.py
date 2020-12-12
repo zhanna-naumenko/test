@@ -1,4 +1,5 @@
 #№1
+
 my_list = ["zero", "one", "two", "three", "four", "five", "six"]
 new_list = []
 for index, value in enumerate(my_list):
@@ -10,6 +11,7 @@ print(new_list)
 
 ####################################################################
 #№2
+
 my_list = ["alpha", "beta", "animal", "macintosh", "apple"]
 new_list = []
 start_a = "a"
@@ -21,6 +23,7 @@ print(new_list)
 
 ######################################################################
 #№3
+
 my_list = ["alpha", "beta", "nice", "dice", "apple"]
 new_list = []
 symbol_a = "a"
@@ -32,6 +35,7 @@ print(new_list)
 
 ########################################################################
 #№4
+
 my_list = [120, 55, "55", "nice", "dice", "apple", 33]
 new_list = []
 
@@ -42,33 +46,30 @@ print(new_list)
 
 #########################################################################
 #№5
+
 my_string = "asdfghasd"
 new_string = []
-for value in my_string:
+for value in set(my_string):
     if my_string.find(value) - my_string.rfind(value) == 0:
         new_string.append(value)
 print(new_string)
 
 ##########################################################################
 #№6
+
 my_str_1 = "hello, world"
 my_str_2 = "hello, work"
-exists = []
-for symbol in my_str_1:
-    if symbol not in exists:
-        if symbol in my_str_2 not in exists:
-            exists.append(symbol)
+exists = set(my_str_1).intersection(my_str_2)
 print(exists)
 
 
 ###########################################################################
 #№7
+
 my_str_1 = "hello, world"
 my_str_2 = "hello, work"
 result = []
-for value in my_str_1:
-    new_value = my_str_1.find(value) - my_str_1.rfind(value)
-    if new_value == 0:
-        if value in my_str_2 and my_str_2.find(value) - my_str_2.rfind(value) == 0:
-            result.append(value)
+for value in set(my_str_1).intersection(set(my_str_2)):
+    if my_str_1.find(value) - my_str_1.rfind(value) == 0 and my_str_2.find(value) - my_str_2.rfind(value) == 0:
+        result.append(value)
 print(result)
