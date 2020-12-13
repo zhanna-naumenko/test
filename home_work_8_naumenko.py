@@ -10,9 +10,9 @@ def open_file_domains():
         domains_name = []
         for line in file_domains.readlines():
             domains_name.append(line.replace(".", "").strip())
-    print(domains_name)
+    return (domains_name)
 
-open_file_domains()
+print(open_file_domains())
 ###########################################################
 
 def open_file_names():
@@ -21,27 +21,19 @@ def open_file_names():
         surnames = []
         for line in data_persons.readlines():
             surnames.append(line.split()[1])
-    print(surnames)
+    return (surnames)
 
-open_file_names()
+print(open_file_names())
 
 ###########################################################
 
 def random_domain():
-    """Opens file domains.txt and return random domain name"""
-    with open("D:/IT/Phyton/test/domains.txt", "r") as file_domains:
-        domain_name = []
-        for line in file_domains.readlines():
-            domain_name.append(line)
-    return random.choice(domain_name)
+    """Return random domain name"""
+    return random.choices(open_file_domains())
 
 def random_name():
-    """Opens file names.txt and return random surname"""
-    with open("D:/IT/Phyton/test/names.txt", "r") as data_persons:
-        surname = []
-        for line in data_persons.readlines():
-            surname.append(line.split()[1])
-    return random.choice(surname)
+    """Return random surname"""
+    return random.choice(open_file_names())
 
 def random_number():
     """Create random number"""
@@ -55,6 +47,6 @@ def random_word():
 
 def random_email():
     """Create random e-mail"""
-    print(random_name() + "." + str(random_number()) + "@" + random_word() + random_domain())
+    print(random_name() + "." + str(random_number()) + "@" + random_word() + "." + str(*random_domain()))
 
 random_email()
