@@ -1,4 +1,5 @@
 import json
+import re
 
 
 def open_json_file():
@@ -26,6 +27,19 @@ print(names_of_mathematics)
 # 3. Написать функцию сортировки по дате смерти из поля "years".
 # Обратите внимание на сокращение BC. - это означает до н.э.
 
+def sort_dates(date_of_death):
+    """Sorting dates of death of mathematics"""
+    years_math = date_of_death["years"]
+    years = re.findall(r"\d+$", years_math)
+    return years
 
+math_year_death = sorted(open_json_file(), key=sort_dates)
+print(math_year_death)
 #################################################################
-# 4. Написать функцию сортировки по количеству слов в поле "text"
+
+def sort_lens_of_text(text):
+    phrase_math = text["text"]
+    return len(phrase_math)
+
+phrase_len = sorted(open_json_file(), key=sort_lens_of_text)
+print(phrase_len)
