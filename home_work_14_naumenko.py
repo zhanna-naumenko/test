@@ -6,6 +6,7 @@ class My15:
     def __init__(self, size):
         self.my_15 = self._generate_size()
         self.row, self.col = self._get_space()
+        self.size = size
 
     def _generate_size(self):
         my_15 = []

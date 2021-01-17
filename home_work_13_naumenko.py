@@ -5,6 +5,8 @@ import random
 
 
 class EmailGenerator:
+    def __init__(self):
+
 
 
 
