@@ -3,7 +3,7 @@ from tkinter import *
 
 
 class My15:
-    def __init__(self):
+    def __init__(self, size):
         self.my_15 = self._generate_size()
         self.row, self.col = self._get_space()
 
@@ -89,11 +89,11 @@ def down(event):
     draw_15_table(my_15)
 
 size = 5
-my_15 = My15()
+my_15 = My15(size=size)
 my_15._print_15()
 root = Tk()
 root.title(size*size-1)
-root.geometry("275x280")
+root.geometry(f"{70* size}x{70*size}")
 root.configure(background='black')
 draw_15_table(my_15)
 root.bind("<Left>", left)
